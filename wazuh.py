@@ -64,7 +64,7 @@ while True:
     agentsLastKeepAliveMoreThan.sort(key=last_keep_alive_diff)
 
     for agent in agentsLastKeepAliveMoreThan:
-        logger.info(f"Host {agent['name']} with id {agent['id']} has not connected for {last_keep_alive_diff(agent).days} days.")
+        logger.info(f"Host: {agent['name']}, id: {agent['id']}, has not connected for {last_keep_alive_diff(agent).days} days.")
 
     #body = "Host".ljust(40) + "Days Without Connections\n"
     #body += '\n'.join([f"{agent['name'].ljust(40)} {last_keep_alive_diff(agent).days}" for agent in agentsLastKeepAliveMoreThan])
