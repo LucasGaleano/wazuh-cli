@@ -1,6 +1,6 @@
 # Wazuh-cli
 
-This script consist in two parts, a wazuh-client for communicate with the Wazuh-manager and a script for getting all the agents that are not connected in more than x days. 
+This script consists in two parts, a wazuh-client for communicate with the Wazuh-manager and a script to get all the agents that are not connected in more than x days.
 
 ## How it works
 First, Create and edit the config.conf (There is a example file in the repository)
