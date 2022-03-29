@@ -20,7 +20,10 @@ The script will logs all the information to stdout and to /var/log/syslog
 
 
 
-## For getting all the packages from wazuh, use wazuhpg.py
+## To get all the packages from wazuh, use wazuhpg.py
+This is an aditional script to get all the packages from all the agents.
+You need to install the requirements.txt to use this.
+pip3 install -r requirements.txt
 
 ### Usage:
 
