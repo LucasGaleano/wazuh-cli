@@ -15,6 +15,9 @@ or to enable the email
 you can also specify some data as a parameters
 `wazuh.py --user <user> --host <host> --email`
 
+## Logging
+The script will logs all the information to stdout and to /var/log/syslog
+
 
 
 ## For getting all the packages from wazuh, use wazuhpg.py
