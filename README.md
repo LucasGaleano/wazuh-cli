@@ -1,6 +1,6 @@
 # Wazuh-cli
 
-This script consist in two parts, a wazuh-client for communicate with the Wazuh-manager and a script for getting all the agents that are not connected in more than x days. 
+This script consists in two parts, a wazuh-client for communicate with the Wazuh-manager and a script to get all the agents that are not connected in more than x days.
 
 ## How it works
 First, Create and edit the config.conf (There is a example file in the repository)
@@ -15,9 +15,15 @@ or to enable the email
 you can also specify some data as a parameters
 `wazuh.py --user <user> --host <host> --email`
 
+## Logging
+The script will logs all the information to stdout and to /var/log/syslog
 
 
-## For getting all the packages from wazuh, use wazuhpg.py
+
+## To get all the packages from wazuh, use wazuhpg.py
+This is an aditional script to get all the packages from all the agents.
+You need to install the requirements.txt to use this.
+pip3 install -r requirements.txt
 
 ### Usage:
 
