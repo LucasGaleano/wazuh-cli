@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from wazuhClient import Wazuh
 from loggingHelper import logger
 import argparse
