@@ -16,21 +16,14 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 @dataclass
 class Wazuh:
     username: str
-    password: str = field(init=False)
     host: str
+    password: str
     port: str = field(default='55000')
-    baseUrl: str = field(init=False)
     token: str = field(init=False)
     verify: bool = field(default=False)
     loginEndpoint: str = field(init=False, default='security/user/authenticate')
     requests_headers: str = field(init=False)
     
-    
-    def __post_init__(self):
-
-        self.baseUrl = f"{self.host}:{self.port}"
-        self.password = getpass.getpass(prompt='Password: ', stream=None)
-        self.authenticate()        
 
     def authenticate(self):
 
@@ -47,7 +40,7 @@ class Wazuh:
 
 
     def req(self, method, resource, data=None):
-        url = '{0}/{1}'.format(self.baseUrl, resource)
+        url = '{0}:{1}/{2}'.format(self.host, self.port, resource)
 
         try:
             requests.packages.urllib3.disable_warnings()

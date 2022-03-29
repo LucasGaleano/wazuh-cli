@@ -4,7 +4,8 @@ to = example@example.com
 subject = Subject Testing
 server = server.example.com
 
-[Host]
+[Wazuh]
 user = myUser
 server =  siem.example.com
 port = 55000
+token = apikey
