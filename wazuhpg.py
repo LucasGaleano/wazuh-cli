@@ -14,11 +14,26 @@ parser.add_argument('-o', '--output',type=str, default='packages.lst',help='outp
 parser.add_argument('-u', '--user',required=True, type=str,help='user')
 args = parser.parse_args()
 
-host = args.host
-port = args.port
-user = args.user
+import configparser
+config = configparser.ConfigParser()
+config.read('config')
 
-api = Wazuh(user,host)
+#some basic validation
+if config.has_section('Wazuh') and 'user' in config['Wazuh']:
+    user = config['Wazuh']['user']
+
+if args.user:
+    user = args.user
+
+if config.has_section('Wazuh') and 'server' in config['Wazuh']:
+    host = config['Wazuh']['server']
+
+if args.host:
+    host = args.host
+
+
+api = Wazuh(user,host, password=config['Wazuh']['token'])
+api.authenticate()
 
 print("[+] Getting all agents")
 status_code, response = api.get_all_agents()
